@@ -1,46 +1,32 @@
-import { useEffect, useState } from "react";
-
+import { Route, Routes, NavLink, Navigate } from "react-router-dom";
+import UserAdd from "./UserAdd";
+import UserList from "./UserList";
+import UserEdit from "./UserEdit";
 export default function App() {
-  const [usersData, setUserData] = useState([]);
-  const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    setLoading(true);
-    getUsersData();
-  }, []);
-
-  const getUsersData = async () => {
-    const url = "http://localhost:5000/users";
-    let response = await fetch(url);
-    response = await response.json();
-    console.log(response);
-    setUserData(response);
-    setLoading(false);
-  };
-  // console.log(usersData);
   return (
     <div>
-      <h1 className="text-4xl font-bold m-8">
-        Integrate JSON Server API and Loader
-      </h1>
-
-      <ul className="grid grid-cols-3 gap-4 border-1">
-        <li className="px-34 py-1 font-medium text-2xl">FirstName</li>
-        <li className="px-34 py-1 font-medium text-2xl">LastName</li>
-        <li className="px-34 py-1 font-medium text-2xl">Age</li>
+      <ul className="flex justify-center m-3">
+        <li>
+          <NavLink to="/list" className="underline text-blue-600 text-xl m-1.5">
+            List
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/add" className="underline text-blue-600 text-xl m-1.5">
+            Add User
+          </NavLink>
+        </li>
       </ul>
-
-      {!loading ? (
-        usersData &&
-        usersData.map((user) => (
-          <ul key={user.name} className="grid grid-cols-3 gap-4 border-1">
-            <li className="px-34 py-1">{user.name}</li>
-            <li className="px-34 py-1">{user.age}</li>
-            <li className="px-34 py-1">{user.email}</li>
-          </ul>
-        ))
-      ) : (
-        <h1>Data Loading..........</h1>
-      )}
+      <h1 className="text-4xl font-bold m-8">
+        Make Routes and Pages for Add User List UI
+      </h1>
+      {/* <UserList /> */}
+      <Routes>
+        <Route path="/" element={<Navigate to="/list" />} />
+        <Route path="/list" element={<UserList />} />
+        <Route path="/add" element={<UserAdd />} />
+        <Route path="/edit/:id" element={<UserEdit />} />
+      </Routes>
     </div>
   );
 }
