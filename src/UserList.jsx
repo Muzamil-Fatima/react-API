@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+
 export default function UserList() {
+
   const [usersData, setUserData] = useState([]);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const url = "http://localhost:3000/users";
+  
   useEffect(() => {
     setLoading(true);
     getUsersData();

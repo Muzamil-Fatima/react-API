@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export default function UserAdd() {
+
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [email, setEmail] = useState("");
@@ -15,8 +16,8 @@ export default function UserAdd() {
     if(response){
         alert("new User Added")
     }
-
   };
+
   return (
     <div className="flex flex-col w-80 mx-auto  p-4 rounded">
       <h1 className="text-2xl">Add New User</h1>
