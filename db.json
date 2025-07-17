@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "name": "Asma",
+      "email": "asmaNoor29@gmail.com",
+      "age": "20",
+      "id": "dd03"
+    },
+    {
+      "name": "Maryam",
+      "age": "20",
+      "email": "maryam29@gmail.com",
+      "id": "3ab8"
+    },
+    {
+      "id": "7c7e",
+      "name": "Ahmad",
+      "email": "ahmad@gmail.com",
+      "age": "20"
+    },
+    {
+      "id": "e264",
+      "name": "Maryam Chattha",
+      "email": "chattha@gmail.com",
+      "age": "10"
+    },
+    {
+      "name": "mum ",
+      "email": "mum@gmail.com",
+      "age": "22",
+      "id": "9f3a"
+    },
+    {
+      "id": "a5a7",
+      "name": "mama",
+      "email": "maam@gmail.com",
+      "age": "23"
+    }
+  ]
+}
